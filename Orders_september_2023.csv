@@ -1,0 +1,5 @@
+ID,Client_ID,Item_ID,Quantity,Date,Delivered
+1,1,EC1,2,20230925,1
+2,2,CO1,1,20230925,0
+3,3,EC1,3,20230924,0
+4,4,EC1,2,20230923,1

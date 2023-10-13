@@ -1,7 +1,7 @@
 CREATE DATABASE E_coffee;
 USE E_coffee;
 CREATE TABLE Inventory (
-	ID int PRIMARY KEY,
+	ID varchar(255) PRIMARY KEY,
     Item varchar(255) NOT NULL UNIQUE,
     Country varchar(255) NOT NULL,
     Description varchar(255) NOT NULL,
@@ -17,14 +17,13 @@ CREATE TABLE Clients (
     postal_code varchar(255) NOT NULL,
     zone int NOT NULL,
     transport_fee double NOT NULL
-);    
-    
+    );
 CREATE TABLE Orders (
 	ID int PRIMARY KEY,
     Client_ID int NOT NULL,
-    Item_ID int NOT NULL,
-    FOREIGN KEY (Client_ID) REFERENCES Inventory(ID),
-    FOREIGN KEY (Item_ID) REFERENCES Clients(ID),
+    Item_ID varchar(255) NOT NULL,
+    FOREIGN KEY (Client_ID) REFERENCES Clients(ID),
+    FOREIGN KEY (Item_ID) REFERENCES Inventory(ID),
     Quantity double NOT NULL,
     Date_order date NOT NULL,
     Delivered boolean NOT NULL
